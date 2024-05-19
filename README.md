@@ -34,7 +34,6 @@ The Task Management API is a backend service built using Express.js and MongoDB.
    ```bash
    npm install
 
-   
 3. Set Up Environment Variables
 
    Create a .env file in the root directory with the following content:
@@ -47,11 +46,9 @@ The Task Management API is a backend service built using Express.js and MongoDB.
    ```bash
     npm start
 5. Create a new user:
+   ```bash
+     curl -X POST http://localhost:5000/createUser -H "Content-Type: application/json" -d '{"name":"Sahil Bansal","email":"bansal2210sahil@gmail.com"}'
 
+6. Swagger link
   ```bash
-  curl -X POST http://localhost:5000/createUser -H "Content-Type: application/json" -d '{"name":"Sahil Bansal","email":"bansal2210sahil@gmail.com"}' 
-
-6. Swagger Link
-
-  ```bash
-  https://app.swaggerhub.com/apis-docs/BANSAL2210SAHIL/Task-Management/1.0.0-oas3#/ 
+  https://app.swaggerhub.com/apis-docs/BANSAL2210SAHIL/Task-Management/1.0.0-oas3#/
