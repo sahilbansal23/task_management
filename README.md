@@ -37,20 +37,10 @@ The Task Management API is a backend service built using Express.js and MongoDB.
 3. Set up environment variables:
 
   Create a .env file in the root directory with the following content:
-   ```bash
-    mongo_str=[YOUR MONGODB URI]
-    PORT=[YOUR PORT]
+  ```bash
+  mongo_str=[YOUR MONGODB URI]
+  PORT=[YOUR PORT]
 
-4. Start the server:
-
-   ```bash
-   npm start
-
-
-5. Create a new user:
-
-   ```bash
-   curl -X POST http://localhost:5000//users -H "Content-Type: application/json" -d '{"name":"John Doe","email":"john.doe@example.com"}'
 
 
 
