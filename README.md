@@ -50,3 +50,8 @@ The Task Management API is a backend service built using Express.js and MongoDB.
 
   ```bash
   curl -X POST http://localhost:5000/createUser -H "Content-Type: application/json" -d '{"name":"Sahil Bansal","email":"bansal2210sahil@gmail.com"}' 
+
+6. Swagger Link
+
+  ```bash
+  https://app.swaggerhub.com/apis-docs/BANSAL2210SAHIL/Task-Management/1.0.0-oas3#/ 
