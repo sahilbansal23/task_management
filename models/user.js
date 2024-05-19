@@ -1,5 +1,3 @@
-// src/models/user.js
-
 const mongoose = require('mongoose');
 
 const subtaskSchema = new mongoose.Schema({

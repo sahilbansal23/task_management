@@ -6,8 +6,8 @@ const app = express();
 
 const bodyParser = require("body-parser");
 const taskController = require("./controller/task_management");
-const PORT = process.env.PORT || 3000;
-// const mongo_str = "mongodb://localhost:27017/";
+const PORT = process.env.PORT || 5000;
+
 mongoose.connect(process.env.mongo_str, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
