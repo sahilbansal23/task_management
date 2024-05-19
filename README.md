@@ -26,5 +26,21 @@ The Task Management API is a backend service built using Express.js and MongoDB.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com
-   cd task-management-api
+   git clone https://github.com/sahilbansal23/task_management.git
+   cd task_management
+
+2. Install dependencies
+
+   ```bash
+   npm install
+
+3. Set up environment variables:
+
+  Create a .env file in the root directory with the following content:
+
+   ```bash
+    mongo_str=[YOUR MONGODB URI]
+    PORT=[YOUR PORT]
+
+
+  
