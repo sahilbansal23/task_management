@@ -44,13 +44,9 @@ The Task Management API is a backend service built using Express.js and MongoDB.
 
 4. Start The Server:
 
+   ```bash
+    npm start
+5. Create a new user:
+
   ```bash
-  npm start
-
-
-
-
-
-
-
-
+  curl -X POST http://localhost:5000/createUser -H "Content-Type: application/json" -d '{"name":"Sahil Bansal","email":"bansal2210sahil@gmail.com"}' 
