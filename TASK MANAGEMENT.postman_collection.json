@@ -1,0 +1,727 @@
+{
+	"info": {
+		"_postman_id": "04ed3e61-2cd1-4643-8498-7c0b614a4d92",
+		"name": "TASK MANAGEMENT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25660010"
+	},
+	"item": [
+		{
+			"name": "All User Tasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\":\"6649f87317951adc5f83529a\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/tasks"
+			},
+			"response": [
+				{
+					"name": "All User Tasks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"6649f87317951adc5f83529a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/tasks"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "256"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"100-EzCA6eFWBq6r5w94JhyXboHKM1A\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 May 2024 13:05:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"user With tasks/ subtasks returned successfully\",\n    \"data\": [\n        {\n            \"subject\": \"Create the Swagger Documentation\",\n            \"deadline\": \"2024-05-21T00:00:00.000Z\",\n            \"status\": \"In Progress\",\n            \"isDeleted\": false,\n            \"_id\": \"6649dcf44ab68ff510d4ffc8\",\n            \"subtasks\": []\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "ALL User Subtasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\":\"6649f87317951adc5f83529a\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/tasks/:taskId/subtasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						":taskId",
+						"subtasks"
+					],
+					"variable": [
+						{
+							"key": "taskId",
+							"value": "6649f87e17951adc5f83529d"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ALL User Subtasks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"6649f87317951adc5f83529a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/tasks/:taskId/subtasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"tasks",
+								":taskId",
+								"subtasks"
+							],
+							"variable": [
+								{
+									"key": "taskId",
+									"value": "6649f87e17951adc5f83529d"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-zzUpfTPbdFj/X1x6aU7UOFZeP6o\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 May 2024 13:03:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"User all subtaks returned successfully\",\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Update task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"6649f87317951adc5f83529a\",\n    \"task\": {\n        \"subject\": \"Create the Swagger Documentation\",\n        \"deadline\": \"2024-05-21T00:00:00.000Z\",\n        \"status\": \"In Progress\",\n        \"isDeleted\": false,\n        \"_id\": \"6649dcf44ab68ff510d4ffc8\",\n        \"subtasks\": []\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/tasks/:taskId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						":taskId"
+					],
+					"variable": [
+						{
+							"key": "taskId",
+							"value": "6649dcf44ab68ff510d4ffc8"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update task",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"6649f87317951adc5f83529a\",\n    \"task\": {\n        \"subject\": \"Create the Swagger Documentation\",\n        \"deadline\": \"2024-05-21T00:00:00.000Z\",\n        \"status\": \"In Progress\",\n        \"isDeleted\": false,\n        \"_id\": \"6649dcf44ab68ff510d4ffc8\",\n        \"subtasks\": []\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/tasks/:taskId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"tasks",
+								":taskId"
+							],
+							"variable": [
+								{
+									"key": "taskId",
+									"value": "6649dcf44ab68ff510d4ffc8"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "222"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"de-T/weEAJninOu9rWs4fNI/a3gt3A\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 May 2024 13:05:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Task is Updated\",\n    \"data\": {\n        \"subject\": \"Create the Swagger Documentation\",\n        \"deadline\": \"2024-05-21T00:00:00.000Z\",\n        \"status\": \"In Progress\",\n        \"isDeleted\": false,\n        \"_id\": \"6649dcf44ab68ff510d4ffc8\",\n        \"subtasks\": []\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Subtasks",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"6649f87317951adc5f83529a\",\n    \"subtasks\": [\n        {\n            \"subject\": \"Create register user api\",\n            \"deadline\": \"2024-05-20\",\n            \"status\": \"Complete\"\n        },\n        {\n            \"subject\": \"Create get user task api\",\n            \"deadline\": \"2024-05-19T00:00:00.000Z\",\n            \"status\": \"Complete\"\n        },\n        {\n            \"subject\": \"Create update Subtask api\",\n            \"deadline\": \"2024-05-20\",\n            \"status\": \"Complete\"\n        },\n        {\n            \"subject\": \"Create update task api\",\n            \"deadline\": \"2024-05-19\",\n            \"status\": \"Complete\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/tasks/:taskId/subtasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						":taskId",
+						"subtasks"
+					],
+					"variable": [
+						{
+							"key": "taskId",
+							"value": "6649dcf44ab68ff510d4ffc8"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Subtasks",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"6649f87317951adc5f83529a\",\n    \"subtasks\": [\n        {\n            \"subject\": \"Create register user api\",\n            \"deadline\": \"2024-05-20\",\n            \"status\": \"Complete\"\n        },\n        {\n            \"subject\": \"Create get user task api\",\n            \"deadline\": \"2024-05-19T00:00:00.000Z\",\n            \"status\": \"Complete\"\n        },\n        {\n            \"subject\": \"Create update Subtask api\",\n            \"deadline\": \"2024-05-20\",\n            \"status\": \"Complete\"\n        },\n        {\n            \"subject\": \"Create update task api\",\n            \"deadline\": \"2024-05-19\",\n            \"status\": \"Complete\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/tasks/:taskId/subtasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"tasks",
+								":taskId",
+								"subtasks"
+							],
+							"variable": [
+								{
+									"key": "taskId",
+									"value": "6649dcf44ab68ff510d4ffc8"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "401"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"191-ozD6ZsShnDJK/BmRW5aIY2cpp6E\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 May 2024 13:06:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Subtasks are updated\",\n    \"data\": [\n        {\n            \"subject\": \"Create register user api\",\n            \"deadline\": \"2024-05-20\",\n            \"status\": \"Complete\"\n        },\n        {\n            \"subject\": \"Create get user task api\",\n            \"deadline\": \"2024-05-19T00:00:00.000Z\",\n            \"status\": \"Complete\"\n        },\n        {\n            \"subject\": \"Create update Subtask api\",\n            \"deadline\": \"2024-05-20\",\n            \"status\": \"Complete\"\n        },\n        {\n            \"subject\": \"Create update task api\",\n            \"deadline\": \"2024-05-19\",\n            \"status\": \"Complete\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\":\"6649f87317951adc5f83529a\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/tasks/:taskId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						":taskId"
+					],
+					"variable": [
+						{
+							"key": "taskId",
+							"value": "6649dcf44ab68ff510d4ffc8"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Task",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"6649f87317951adc5f83529a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/tasks/:taskId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"tasks",
+								":taskId"
+							],
+							"variable": [
+								{
+									"key": "taskId",
+									"value": "6649dcf44ab68ff510d4ffc8"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "811"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"32b-3rV/lg6EJQnJS087qwFdRtpbnsw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 May 2024 13:06:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Task is Deleted\",\n    \"data\": {\n        \"subject\": \"Create the Swagger Documentation\",\n        \"deadline\": \"2024-05-21T00:00:00.000Z\",\n        \"status\": \"In Progress\",\n        \"isDeleted\": true,\n        \"_id\": \"6649dcf44ab68ff510d4ffc8\",\n        \"subtasks\": [\n            {\n                \"subject\": \"Create register user api\",\n                \"deadline\": \"2024-05-20T00:00:00.000Z\",\n                \"status\": \"Complete\",\n                \"isDeleted\": false,\n                \"_id\": \"6649f93817951adc5f8352b5\"\n            },\n            {\n                \"subject\": \"Create get user task api\",\n                \"deadline\": \"2024-05-19T00:00:00.000Z\",\n                \"status\": \"Complete\",\n                \"isDeleted\": false,\n                \"_id\": \"6649f93817951adc5f8352b6\"\n            },\n            {\n                \"subject\": \"Create update Subtask api\",\n                \"deadline\": \"2024-05-20T00:00:00.000Z\",\n                \"status\": \"Complete\",\n                \"isDeleted\": false,\n                \"_id\": \"6649f93817951adc5f8352b7\"\n            },\n            {\n                \"subject\": \"Create update task api\",\n                \"deadline\": \"2024-05-19T00:00:00.000Z\",\n                \"status\": \"Complete\",\n                \"isDeleted\": false,\n                \"_id\": \"6649f93817951adc5f8352b8\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get User List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/getuser"
+			},
+			"response": [
+				{
+					"name": "Get User List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/getuser"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "143"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8f-Zw1rKNo6aLzOdnYVVLVgILxTP50\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 May 2024 13:02:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"User List sent\",\n    \"data\": [\n        {\n            \"_id\": \"6649dc1f4ab68ff510d4ffc2\",\n            \"name\": \"Sahil Bansal\",\n            \"email\": \"bansal2210sahil@gmail.com\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Create New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Sahil Bansal\",\n    \"email\":\"bansal2210sahil@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/createUser"
+			},
+			"response": [
+				{
+					"name": "Create New User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Sahil Bansal\",\n    \"email\":\"bansal2210sahil@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/createUser"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "161"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a1-Kbu0DJ+Hjqymh5+vxPDBGVLmlsw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 May 2024 13:02:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"user is created\",\n    \"data\": {\n        \"name\": \"Sahil Bansal\",\n        \"email\": \"bansal2210sahil@gmail.com\",\n        \"tasks\": [],\n        \"_id\": \"6649f87317951adc5f83529a\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create New Task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"6649f87317951adc5f83529a\",\n    \"task\": {\n        \"subject\": \"Create the Swagger Documentation\",\n        \"deadline\": \"2024-05-21\",\n        \"status\": \"pending\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/tasks"
+			},
+			"response": [
+				{
+					"name": "Create New Task",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"6649f87317951adc5f83529a\",\n    \"task\": {\n        \"subject\": \"Create the Swagger Documentation\",\n        \"deadline\": \"2024-05-21\",\n        \"status\": \"pending\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/tasks"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "143"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8f-yzefMVP7FTIHnntogxZgZawoF60\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 May 2024 13:02:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"new Task is created\",\n    \"data\": {\n        \"subject\": \"Create the Swagger Documentation\",\n        \"deadline\": \"2024-05-21\",\n        \"status\": \"pending\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
